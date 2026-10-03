@@ -1,0 +1,32 @@
+:root {
+  --bg: #0B0A10;
+  --card: #16131F;
+  --plum: #3B1D6E;
+  --primary: #7C3AED;
+  --glow: #B58CFF;
+  --heading: #EDE9FE;
+  --text: #A39BB8;
+  --pop: #E5367F;
+  --pop-dark: #9D174D; /* पिंक की गहरी शेड, हॉवर या शैडो के लिए */
+}
+
+/*  For Buttons & Headings linear gradient background 
+
+background: linear-gradient(135deg, #7C3AED, #E5367F);
+
+*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#0B0A10;
+    color:#EDE9FE;
+    font-family: "Poppins", sans-serif;
+}
+
+
