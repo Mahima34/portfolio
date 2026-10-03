@@ -7,10 +7,10 @@
   --heading: #EDE9FE;
   --text: #A39BB8;
   --pop: #E5367F;
-  --pop-dark: #9D174D; /* पिंक की गहरी शेड, हॉवर या शैडो के लिए */
+  --pop-dark: #9D174D; /* Pink Dark Shade */
 }
 
-/*  For Buttons & Headings linear gradient background 
+/*  For Buttons & Headings & Linear Gradient Background 
 
 background: linear-gradient(135deg, #7C3AED, #E5367F);
 
@@ -29,4 +29,40 @@ body{
     font-family: "Poppins", sans-serif;
 }
 
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 16px 40px;
+    background-color: var(--card);
+    border-bottom: 1px solid var(--plum);
+}
+
+.name{
+    font-size:24px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #7C3AED, #E5367F);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;   
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.navbar a{
+    color: var(--text);
+    text-decoration: none;
+    font-size:16px;
+    padding-bottom: 4px;
+    transition: color 0.3s, border-color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+.navbar a:hover{
+    color: var(--glow);
+    border-color: var(--glow);
+}
 
