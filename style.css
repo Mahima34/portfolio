@@ -206,3 +206,374 @@ body{
     height: 220px;
   }
 }
+
+/* About section */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 80px 40px;
+  background: var(--card);
+  border-top: 1px solid var(--plum);
+  border-bottom: 1px solid var(--plum);
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+/* Section heading (baaki sections me bhi use hoga) */
+.section-title {
+  font-size: 36px;
+  color: var(--heading);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.section-title span {
+  background: linear-gradient(135deg, #7C3AED, #E5367F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Heading ke neeche chhoti pink line */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--pop);
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+.about-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.about-text .btn {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* About section */
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 80px 40px;
+  background: var(--card);
+  border-top: 1px solid var(--plum);
+  border-bottom: 1px solid var(--plum);
+}
+
+.about-text {
+  max-width: 750px;
+  text-align: center;
+}
+
+/* Section heading (baaki sections me bhi use hoga) */
+.section-title {
+  font-size: 36px;
+  color: var(--heading);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.section-title span {
+  background: linear-gradient(135deg, #7C3AED, #E5367F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Heading ke neeche chhoti pink line (center me) */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--pop);
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+.about-text p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.about-text .btn {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about {
+    padding: 50px 20px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+}
+
+/* Skills section */
+.skills {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 700px;
+  margin: 30px auto 0;
+}
+
+.skill {
+  padding: 12px 28px;
+  background: var(--bg);
+  color: var(--glow);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.skill:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--pop);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .skills {
+    padding: 50px 20px;
+  }
+
+  .skill {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Projects section */
+.projects {
+  padding: 80px 40px;
+  text-align: center;
+  background: var(--card);
+  border-top: 1px solid var(--plum);
+  border-bottom: 1px solid var(--plum);
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--plum);
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: var(--plum);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  font-size: 22px;
+  color: var(--heading);
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.card-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.card-links a {
+  color: var(--glow);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.card-links a:hover {
+  color: var(--heading);
+  border-bottom-color: var(--pop);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .projects {
+    padding: 50px 20px;
+  }
+
+  .project-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 180px;
+  }
+}
+
+/* Contact section */
+.contact {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 650px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--card);
+  color: var(--heading);
+  border: 1px solid var(--plum);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+}
+
+.contact-form .btn {
+  align-self: center;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact {
+    padding: 50px 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* Footer */
+.footer {
+  padding: 30px 20px;
+  text-align: center;
+  background: var(--card);
+  border-top: 1px solid var(--plum);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.social-links a {
+  color: var(--glow);
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--heading);
+  border-bottom-color: var(--pop);
+}
+
+.footer p {
+  font-size: 14px;
+  color: var(--text);
+}
