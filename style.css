@@ -1,3 +1,9 @@
+/* ==========================================================
+   Portfolio - Mahima Rajput
+   Theme: black + purple with raspberry pink accent
+   ========================================================== */
+
+/* ---------- Variables ---------- */
 :root {
   --bg: #0B0A10;
   --card: #16131F;
@@ -7,159 +13,130 @@
   --heading: #EDE9FE;
   --text: #A39BB8;
   --pop: #E5367F;
-  --pop-dark: #9D174D; /* Pink Dark Shade */
+  --pop-dark: #9D174D;
+
+  --gradient: linear-gradient(135deg, #7C3AED, #E5367F);
+  --radius: 14px;
+  --space-x: clamp(20px, 5vw, 40px);   /* side padding */
+  --space-y: clamp(50px, 8vw, 80px);   /* section top/bottom padding */
 }
 
-/*  For Buttons & Headings & Linear Gradient Background 
-
-background: linear-gradient(135deg, #7C3AED, #E5367F);
-
-*/
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ---------- Reset & base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color:#0B0A10;
-    color:#EDE9FE;
-    font-family: "Poppins", sans-serif;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* navbar ke neeche section chhupe nahi */
 }
 
-.navbar{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    padding: 16px 40px;
-    background-color: var(--card);
-    border-bottom: 1px solid var(--plum);
-}
-
-.name{
-    font-size:24px;
-    font-weight: 600;
-    background: linear-gradient(135deg, #7C3AED, #E5367F);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;   
-}
-
-.navbar ul{
-    display: flex;
-    list-style: none;
-    gap: 28px;
-}
-
-.navbar a{
-    color: var(--text);
-    text-decoration: none;
-    font-size:16px;
-    padding-bottom: 4px;
-    transition: color 0.3s, border-color 0.3s;
-    border-bottom: 2px solid transparent;
-}
-.navbar a:hover{
-    color: var(--glow);
-    border-color: var(--glow);
-}
-
-/* Hero section */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 80px 40px;
-  min-height: calc(100vh - 70px);
-}
-
-.hero-text {
-  flex: 1;
-}
-
-/* Heading */
-.heading {
-  font-size: 48px;
-  line-height: 1.2;
+body {
+  background-color: var(--bg);
   color: var(--heading);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
-.heading span {
-  background: linear-gradient(135deg, #7C3AED, #E5367F);
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Keyboard users ke liye focus outline */
+:focus-visible {
+  outline: 2px solid var(--glow);
+  outline-offset: 3px;
+}
+
+/* Screen readers ke liye hidden labels */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px 24px;
+  padding: 16px var(--space-x);
+  background: rgba(22, 19, 31, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--plum);
+}
+
+.name {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Role */
-.role {
-  position: relative;
-  height: 1.6em;
-  margin-top: 12px;
-  font-family: "Courier New", monospace;
-  font-size: 22px;
-  color: var(--glow);
-}
-
-.word {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  border-right: 2px solid var(--pop);
-}
-
-.word1 {
-  animation: type1 10s infinite;
-}
-
-.word2 {
-  animation: type2 10s infinite;
-}
-
-@keyframes type1 {
-  0%   { width: 0;    animation-timing-function: steps(18); }
-  30%  { width: 18ch; }
-  40%  { width: 18ch; animation-timing-function: steps(18); }
-  50%  { width: 0; }
-  100% { width: 0; }
-}
-
-@keyframes type2 {
-  0%   { width: 0; }
-  50%  { width: 0;    animation-timing-function: steps(13); }
-  80%  { width: 13ch; }
-  90%  { width: 13ch; animation-timing-function: steps(13); }
-  100% { width: 0; }
-}
-
-/* Buttons */
-.hero-buttons {
+.nav-links {
   display: flex;
-  gap: 16px;
-  margin-top: 28px;
+  gap: 28px;
 }
 
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--glow);
+  border-color: var(--glow);
+}
+
+/* ---------- Buttons ---------- */
 .btn {
+  display: inline-block;
   padding: 12px 26px;
   border-radius: 8px;
+  text-align: center;
   text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
   transition: all 0.3s;
 }
 
 .btn.primary {
   background: var(--primary);
   color: #fff;
+  border: 1.5px solid var(--primary);
 }
 
 .btn.primary:hover {
   background: var(--glow);
+  border-color: var(--glow);
   color: var(--bg);
   transform: translateY(-3px);
 }
@@ -175,127 +152,17 @@ body{
   transform: translateY(-3px);
 }
 
-/* Photo */
-.hero-image img {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
-  box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .heading {
-    font-size: 34px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-image img {
-    width: 220px;
-    height: 220px;
-  }
-}
-
-/* About section */
-.about {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  padding: 80px 40px;
-  background: var(--card);
-  border-top: 1px solid var(--plum);
-  border-bottom: 1px solid var(--plum);
-}
-
-.about-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.about-text {
-  flex: 1;
-}
-
-/* Section heading (baaki sections me bhi use hoga) */
+/* ---------- Shared section heading ---------- */
 .section-title {
-  font-size: 36px;
+  position: relative;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   color: var(--heading);
   margin-bottom: 20px;
-  position: relative;
   padding-bottom: 12px;
 }
 
 .section-title span {
-  background: linear-gradient(135deg, #7C3AED, #E5367F);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Heading ke neeche chhoti pink line */
-.section-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 50px;
-  height: 3px;
-  background: var(--pop);
-  border-radius: 2px;
-}
-
-/* Paragraphs */
-.about-text p {
-  font-size: 17px;
-  line-height: 1.8;
-  color: var(--text);
-  margin-bottom: 16px;
-}
-
-.about-text .btn {
-  display: inline-block;
-  margin-top: 10px;
-}
-
-/* About section */
-.about {
-  display: flex;
-  justify-content: center;
-  padding: 80px 40px;
-  background: var(--card);
-  border-top: 1px solid var(--plum);
-  border-bottom: 1px solid var(--plum);
-}
-
-.about-text {
-  max-width: 750px;
-  text-align: center;
-}
-
-/* Section heading (baaki sections me bhi use hoga) */
-.section-title {
-  font-size: 36px;
-  color: var(--heading);
-  margin-bottom: 20px;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.section-title span {
-  background: linear-gradient(135deg, #7C3AED, #E5367F);
+  background: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -314,37 +181,121 @@ body{
   border-radius: 2px;
 }
 
-/* Paragraphs */
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-y) var(--space-x);
+  min-height: calc(100vh - 72px);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  color: var(--heading);
+}
+
+.heading span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Typing effect (sirf CSS) */
+.role {
+  position: relative;
+  height: 1.6em;
+  margin-top: 12px;
+  font-family: "Courier New", monospace;
+  font-size: clamp(1rem, 4vw, 1.375rem);
+  color: var(--glow);
+}
+
+.word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--pop);
+}
+
+.word1 { animation: type1 10s infinite; }
+.word2 { animation: type2 10s infinite; }
+
+/* 18 = "Frontend Developer" ke letters, 13 = "Web Developer" ke letters */
+@keyframes type1 {
+  0%   { width: 0;    animation-timing-function: steps(18); }
+  30%  { width: 18ch; }
+  40%  { width: 18ch; animation-timing-function: steps(18); }
+  50%  { width: 0; }
+  100% { width: 0; }
+}
+
+@keyframes type2 {
+  0%   { width: 0; }
+  50%  { width: 0;    animation-timing-function: steps(13); }
+  80%  { width: 13ch; }
+  90%  { width: 13ch; animation-timing-function: steps(13); }
+  100% { width: 0; }
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.hero-image img {
+  width: clamp(220px, 28vw, 320px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
+}
+
+/* ---------- About ---------- */
+.about {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-y) var(--space-x);
+  background: var(--card);
+  border-top: 1px solid var(--plum);
+  border-bottom: 1px solid var(--plum);
+}
+
+.about-text {
+  max-width: 750px;
+  text-align: center;
+}
+
 .about-text p {
-  font-size: 20px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   line-height: 1.8;
   color: var(--text);
   margin-bottom: 16px;
 }
 
 .about-text .btn {
-  display: inline-block;
   margin-top: 10px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .about {
-    padding: 50px 20px;
-  }
-
-  .section-title {
-    font-size: 30px;
-  }
-
-  .about-text p {
-    font-size: 16px;
-  }
-}
-
-/* Skills section */
+/* ---------- Skills ---------- */
 .skills {
-  padding: 80px 40px;
+  padding: var(--space-y) var(--space-x);
   text-align: center;
 }
 
@@ -363,7 +314,7 @@ body{
   color: var(--glow);
   border: 1px solid var(--primary);
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   transition: all 0.3s;
 }
@@ -376,21 +327,9 @@ body{
   box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .skills {
-    padding: 50px 20px;
-  }
-
-  .skill {
-    padding: 10px 20px;
-    font-size: 15px;
-  }
-}
-
-/* Projects section */
+/* ---------- Projects ---------- */
 .projects {
-  padding: 80px 40px;
+  padding: var(--space-y) var(--space-x);
   text-align: center;
   background: var(--card);
   border-top: 1px solid var(--plum);
@@ -408,7 +347,7 @@ body{
 .card {
   background: var(--bg);
   border: 1px solid var(--plum);
-  border-radius: 14px;
+  border-radius: var(--radius);
   overflow: hidden;
   text-align: left;
   transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
@@ -424,7 +363,6 @@ body{
   width: 100%;
   height: 200px;
   object-fit: cover;
-  display: block;
   background: var(--plum);
 }
 
@@ -433,19 +371,20 @@ body{
 }
 
 .card-body h3 {
-  font-size: 22px;
+  font-size: 1.375rem;
   color: var(--heading);
   margin-bottom: 8px;
 }
 
 .card-body p {
-  font-size: 15px;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text);
 }
 
 .card-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
   margin-top: 16px;
 }
@@ -463,24 +402,9 @@ body{
   border-bottom-color: var(--pop);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .projects {
-    padding: 50px 20px;
-  }
-
-  .project-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .card img {
-    height: 180px;
-  }
-}
-
-/* Contact section */
+/* ---------- Contact ---------- */
 .contact {
-  padding: 80px 40px;
+  padding: var(--space-y) var(--space-x);
   text-align: center;
 }
 
@@ -506,13 +430,14 @@ body{
   border: 1px solid var(--plum);
   border-radius: 8px;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .contact-form textarea {
   resize: vertical;
+  min-height: 140px;
 }
 
 .contact-form input::placeholder,
@@ -528,23 +453,9 @@ body{
 
 .contact-form .btn {
   align-self: center;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .contact {
-    padding: 50px 20px;
-  }
-
-  .form-row {
-    flex-direction: column;
-  }
-}
-
-/* Footer */
+/* ---------- Footer ---------- */
 .footer {
   padding: 30px 20px;
   text-align: center;
@@ -554,8 +465,9 @@ body{
 
 .social-links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 12px 24px;
   margin-bottom: 16px;
 }
 
@@ -574,6 +486,128 @@ body{
 }
 
 .footer p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+/* ---------- Tablet (<= 1024px) ---------- */
+@media (max-width: 1024px) {
+  .hero {
+    gap: 30px;
+  }
+}
+
+/* ---------- Large mobile / small tablet (<= 768px) ---------- */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 100px; /* navbar do line ka ho jaata hai */
+  }
+
+  /* Navbar: naam upar, links neeche, dono center me */
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px var(--space-x);
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  /* Hero: photo upar, text neeche, sab center me */
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    min-height: auto;
+    gap: 28px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Typing text ko center karne ke liye:
+     box ki width = sabse lambe word ke barabar, aur chhota word beech me */
+  .role {
+    width: 18ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .word2 {
+    left: 2.5ch; /* (18 - 13) / 2 */
+  }
+
+  /* Projects: ek ke neeche ek */
+  .project-cards {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .skill {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- Small mobile (<= 600px) ---------- */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Very small mobile (<= 480px) ---------- */
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    padding: 12px 20px;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+}
+
+/* ---------- Jin users ne animation band rakhi hai ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+
+  /* Typing ki jagah pehla word seedha dikhao */
+  .word1 {
+    animation: none;
+    width: auto;
+    border-right: none;
+  }
+
+  .word2 {
+    display: none;
+  }
 }
